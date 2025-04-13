@@ -5,48 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Name - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #ffffff;
+            --secondary-color: rgba(255, 255, 255, 0.7);
+            --background: transparent;
+            --box-bg: rgba(255, 255, 255, 0.07);
+            --box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
         body {
-            transition: background-color 0.5s, color 0.5s;
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
+            background-image: url('new_portfolio_background_by_larundel_d3n15qk-fullview.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: var(--primary-color);
+            min-height: 100vh;
         }
-        .light-mode {
-            background-color: #ffffff;
-            color: #000000;
-        }
-        .dark-mode {
-            background-color: #222222;
-            color: #e6e6e6;
-        }
-        .toggle-container {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 100;
-            display: flex;
-            gap: 10px;
-        }
-        .toggle-button {
-            cursor: pointer;
-            padding: 10px;
-            border: none;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            font-size: 20px;
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.3s, background-color 0.3s;
-        }
-        .toggle-button:hover {
-            transform: scale(1.1);
-            background-color: rgba(255, 255, 255, 0.2);
-        }
+
         header, section {
             text-align: center;
             max-width: 800px;
@@ -187,6 +167,12 @@
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.6s ease;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 1200px;
+            backdrop-filter: blur(5px);
         }
 
         .section-box.visible {
@@ -684,43 +670,165 @@
         .hobby-item:hover .music-image {
             transform: scale(1.05);
         }
+
+        /* Projects section styling */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .experience-box {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: 200px; /* Match the height of hobby boxes */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .experience-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .experience-content {
+            width: 100%;
+        }
+
+        .experience-content h3 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .experience-content p {
+            font-size: 1.1rem;
+            color: #e0e0e0;
+            margin: 8px 0;
+        }
+
+        /* Responsive layout for smaller screens */
+        @media (max-width: 768px) {
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .experience-box {
+                height: auto;
+                min-height: 180px;
+            }
+        }
+
+        a {
+            color: #00ffff;
+        }
+
+        a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* Base font settings */
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* Body text */
+        p {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        /* Navigation */
+        nav a {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+        }
+
+        /* Experience and hobby boxes */
+        .experience-content h3, 
+        .hobby-content h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 1.25rem;
+        }
+
+        .experience-content p, 
+        .hobby-content p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Links */
+        a {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+        }
     </style>
 </head>
-<body class="light-mode">
+<body>
     <header class="hero-section">
         <nav>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" data-translate="nav-about">Über Mich</a></li>
+                <li><a href="#projects" data-translate="nav-experiences">Erfahrungen</a></li>
+                <li><a href="#contact" data-translate="nav-contact">Kontakt</a></li>
+                <div class="language-switch">
+                    <select id="languageSelect" onchange="changeLanguage(this.value)">
+                        <option value="en">EN</option>
+                        <option value="de">DE</option>
+                    </select>
+                </div>
             </ul>
         </nav>
         <div class="hero-content">
             <div class="hero-text">
                 <h1>MOHAMED <span>OSMAN</span><br>MOHAMED</h1>
+                <p>18 Jahre alt, aus Somalia</p>
                 <p>BFF Schüler</p>
             </div>
             <img src="mohamedmohamed.jpg" alt="Mohamed" class="profile-image">
         </div>
     </header>
 
-    <div class="toggle-container">
-        <button class="toggle-button" id="light-mode">☀️</button>
-        <button class="toggle-button" id="dark-mode">🌙</button>
-    </div>
-
     <section id="about" class="section-box">
-        <h2>About Me</h2>
+        <h2 data-translate="about-title">Über Mich</h2>
         <div class="about-container">
             <img src="cartoon-scientist-working-laptop-black-white-vector-illustration_1057-117185.jpg" 
                  alt="Cartoon Developer" 
                  class="about-image animated">
             <div class="about-content">
-                <p>Hello! I'm Mohamed Osman Mohamed, a passionate BFF Schüler. I specialize in web development and design, creating engaging digital experiences.</p>
+                <p data-translate="about-text-1">Hallo! Mein Name ist Mohamed Osman Mohamed, und ich bin ein 18-Jähriger, der das Programmieren und das Lösen von Problemen liebt, besonders wenn es um IT geht. Diese Website ist mein allererstes Projekt, mit dem ich in die Welt der Webentwicklung eintauche, angefangen mit HTML und CSS.</p>
+                
+                <p data-translate="about-text-2">Ich begann meine Reise in die Programmierung, indem ich Python als erste Sprache erlernte, was mir half, die Grundlagen des Programmierens und Problemlösens zu verstehen. Vor kurzem habe ich beschlossen, meinen Schwerpunkt auf die Erstellung von Websites zu verlagern, aber meine Leidenschaft für das Programmieren und das Lernen neuer Dinge wächst weiter.</p>
+                
+                <p data-translate="about-text-3">Diese Website markiert den Beginn meiner Reise in die Webentwicklung, und ich freue mich darauf, mich weiter zu verbessern und alles zu erforschen, was die Welt der Technik zu bieten hat.</p>
                 
                 <div class="skills-grid">
                     <div class="skill-item">Python</div>
-                    <div class="skill-item">HTML</div>
+                    <div class="skill-item">HTML/CSS</div>
                 </div>
             </div>
         </div>
@@ -733,13 +841,13 @@
                 <img src="football-soccer-player-running-ball-600nw-2454304077.jpg" 
                      alt="Football" 
                      class="hobby-image">
-                <span class="hobby-title">Football</span>
+                <span class="hobby-title">Fussball</span>
             </div>
             <div class="hobby-item">
                 <img src="1.jpg" 
                      alt="Programming" 
                      class="hobby-image">
-                <span class="hobby-title">Programming</span>
+                <span class="hobby-title">Programmieren</span>
             </div>
             <div class="hobby-item">
                 <img src="toronto-canada-november-24-2020-260nw-1860839008.jpg" 
@@ -751,83 +859,103 @@
                 <img src="young-man-listen-music-on-260nw-2280554383.jpg" 
                      alt="Music" 
                      class="hobby-image music-image">
-                <span class="hobby-title">Music</span>
+                <span class="hobby-title">Musik</span>
             </div>
         </div>
     </section>
 
     <section id="projects" class="section-box">
-        <h2>Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <img src="project1.jpg" alt="Project 1" class="project-image">
-                <div class="project-content">
-                    <h3>Project Title 1</h3>
-                    <p>Description of your first project. Explain what technologies you used and what you learned.</p>
+        <h2 data-translate="exp-title">Erfahrungen</h2>
+        
+        <h3 data-translate="exp-subtitle">Schnupperlehren</h3>
+        <div class="experience-grid">
+            <div class="experience-box">
+                <div class="experience-content">
+                    <h3 data-translate="exp-cs-1">Informatiker</h3>
+                    <p>in <a href="https://www.dvbern.ch/de">DV Bern</a></p>
+                    <p>9. bis 11. Oktober 2024</p>
                 </div>
             </div>
             
-            <div class="project-card">
-                <img src="project2.jpg" alt="Project 2" class="project-image">
-                <div class="project-content">
-                    <h3>Project Title 2</h3>
-                    <p>Description of your second project. Highlight your role and the impact it had.</p>
+            <div class="experience-box">
+                <div class="experience-content">
+                    <h3 data-translate="exp-cs-2">ICT Informatiker</h3>
+                    <p>in <a href="https://tfbern.ch/grundbildung-edu/ict-fachfrau-mann-efz/">TF (Technische Fachschule)</a></p>
+                    <p>7. Mai 2024</p>
                 </div>
             </div>
             
-            <div class="project-card">
-                <img src="project3.jpg" alt="Project 3" class="project-image">
-                <div class="project-content">
-                    <h3>Project Title 3</h3>
-                    <p>Description of your third project. Share what makes this project special.</p>
+            <div class="experience-box">
+                <div class="experience-content">
+                    <h3 data-translate="exp-cs-3">Informatiker</h3>
+                    <p>in <a href="https://berufsbildungscenter.ch/lehrberuf-informatik/#:~:text=Deine%20Ausbildung%20als%20Informatiker%2F%2D,Gallen">BBC (Berufsbildungscenter)</a></p>
+                    <p>21. Mai 2024</p>
+                </div>
+            </div>
+            
+            <div class="experience-box">
+                <div class="experience-content">
+                    <h3 data-translate="exp-poly">Polymechaniker</h3>
+                    <p>in <a href="https://tfbern.ch/grundbildung-edu/polymechaniker-in-efz-mit-bms/">TF (Technische Fachschule)</a></p>
+                    <p>10. bis 13. April 2024</p>
+                </div>
+            </div>
+
+            <div class="experience-box">
+                <div class="experience-content">
+                    <h3 data-translate="exp-kv">KV</h3>
+                    <p>in <a href="https://staempfli.com/de" target="_blank">Stämpfli</a></p>
+                    <p>28. Oktober 2025</p>
+                </div>
+            </div>
+
+            <div class="experience-box">
+                <div class="experience-content">
+                    <h3 data-translate="exp-media">Mediamatiker</h3>
+                    <p>in <a href="https://staempfli.com/de" target="_blank">Stämpfli</a></p>
+                    <p>28. Oktober 2024</p>
+                </div>
+            </div>
+
+            <div class="experience-box">
+                <div class="experience-content">
+                    <h3 data-translate="exp-detail">Detailhandelsfachmann</h3>
+                    <p>in <a href="https://migros-gruppe.jobs/de" target="_blank">Migros</a></p>
+                    <p>13/14 Februar 2024</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="contact" class="section-box">
-        <h2>Contact Me</h2>
-        <p>If you'd like to get in touch, feel free to reach out via any of these platforms.</p>
+        <h2 data-translate="contact-title">Kontakt</h2>
+        <p data-translate="contact-description">Wenn Sie mit uns in Kontakt treten möchten, können Sie uns über eine dieser Plattformen erreichen.</p>
         <div class="contact-grid">
             <a href="mailto:amiinmohamed100@gmail.com" class="contact-box email">
                 <i class="fas fa-envelope"></i>
-                <h3>Email</h3>
+                <h3 data-translate="contact-email">Email</h3>
                 <p>amiinmohamed100@gmail.com</p>
             </a>
             
             <a href="https://www.Instagram.com/arcan3_m" target="_blank" class="contact-box instagram">
                 <i class="fab fa-instagram"></i>
-                <h3>Instagram</h3>
+                <h3 data-translate="contact-instagram">Instagram</h3>
                 <p>@arcan3_m</p>
             </a>
             
             <a href="https://wa.me/+41766023466" target="_blank" class="contact-box whatsapp">
                 <i class="fab fa-whatsapp"></i>
-                <h3>WhatsApp</h3>
+                <h3 data-translate="contact-whatsapp">WhatsApp</h3>
                 <p>+41 76 602 3466</p>
             </a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2023 Your Name. All rights reserved.</p>
+        <p>&copy; 2024 Mohamed. All rights reserved.</p>
     </footer>
 
     <script>
-        const lightButton = document.getElementById('light-mode');
-        const darkButton = document.getElementById('dark-mode');
-        const body = document.body;
-
-        lightButton.addEventListener('click', () => {
-            body.classList.remove('dark-mode');
-            body.classList.add('light-mode');
-        });
-
-        darkButton.addEventListener('click', () => {
-            body.classList.remove('light-mode');
-            body.classList.add('dark-mode');
-        });
-
         // Intersection Observer for scroll animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -854,6 +982,69 @@
                 });
             });
         });
+
+        // Define translations
+        const translations = {
+            en: {
+                "nav-about": "About Me",
+                "nav-experiences": "Experiences",
+                "nav-contact": "Contact",
+                "about-title": "About Me",
+                "about-text-1": "Hello! My name is Mohamed Osman Mohamed, and I am an 18-year-old who loves programming and solving problems, especially in IT. This website is my very first project diving into the world of web development, starting with HTML and CSS.",
+                "about-text-2": "I started my programming journey by learning Python as my first language, which helped me understand the basics of programming and problem-solving. Recently, I decided to shift my focus to building websites, but my passion for programming and learning new things continues to grow.",
+                "about-text-3": "This website marks the beginning of my journey into web development, and I look forward to improving myself and exploring everything the tech world has to offer.",
+                "exp-title": "Experiences",
+                "exp-subtitle": "Internships",
+                "exp-cs-1": "IT Specialist",
+                "exp-cs-2": "ICT Specialist",
+                "exp-cs-3": "IT Specialist",
+                "exp-poly": "Polymechanic",
+                "exp-kv": "Commercial Employee",
+                "exp-media": "Mediamatician",
+                "exp-detail": "Retail Specialist",
+                "contact-title": "Contact",
+                "contact-description": "If you would like to get in touch, you can reach us through one of these platforms.",
+                "contact-email": "Email",
+                "contact-instagram": "Instagram",
+                "contact-whatsapp": "WhatsApp"
+            },
+            de: {
+                "nav-about": "Über Mich",
+                "nav-experiences": "Erfahrungen",
+                "nav-contact": "Kontakt",
+                "about-title": "Über Mich",
+                "about-text-1": "Hallo! Mein Name ist Mohamed Osman Mohamed, und ich bin ein 18-Jähriger, der das Programmieren und das Lösen von Problemen liebt, besonders wenn es um IT geht. Diese Website ist mein allererstes Projekt, mit dem ich in die Welt der Webentwicklung eintauche, angefangen mit HTML und CSS.",
+                "about-text-2": "Ich begann meine Reise in die Programmierung, indem ich Python als erste Sprache erlernte, was mir half, die Grundlagen des Programmierens und Problemlösens zu verstehen. Vor kurzem habe ich beschlossen, meinen Schwerpunkt auf die Erstellung von Websites zu verlagern, aber meine Leidenschaft für das Programmieren und das Lernen neuer Dinge wächst weiter.",
+                "about-text-3": "Diese Website markiert den Beginn meiner Reise in die Webentwicklung, und ich freue mich darauf, mich weiter zu verbessern und alles zu erforschen, was die Welt der Technik zu bieten hat.",
+                "exp-title": "Erfahrungen",
+                "exp-subtitle": "Schnupperlehren",
+                "exp-cs-1": "Informatiker",
+                "exp-cs-2": "ICT Informatiker",
+                "exp-cs-3": "Informatiker",
+                "exp-poly": "Polymechaniker",
+                "exp-kv": "Kaufmann",
+                "exp-media": "Mediamatiker",
+                "exp-detail": "Detailhandelsfachmann",
+                "contact-title": "Kontakt",
+                "contact-description": "Wenn Sie mit uns in Kontakt treten möchten, können Sie uns über eine dieser Plattformen erreichen.",
+                "contact-email": "Email",
+                "contact-instagram": "Instagram",
+                "contact-whatsapp": "WhatsApp"
+            }
+        };
+
+        // Function to change language
+        function changeLanguage(language) {
+            document.querySelectorAll("[data-translate]").forEach(element => {
+                const key = element.getAttribute("data-translate");
+                if (translations[language][key]) {
+                    element.textContent = translations[language][key];
+                }
+            });
+        }
+
+        // Initialize with default language (English)
+        changeLanguage("en");
     </script>
 </body>
 </html>
